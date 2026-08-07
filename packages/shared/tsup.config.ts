@@ -7,21 +7,25 @@ export default defineConfig({
 
   target: "es2022",
 
-  clean: true,
+  outDir: "dist",
 
-  splitting: false,
+  clean: false,       // tsc already generated .d.ts
+  dts: false,         // declarations come from tsc
 
-  sourcemap: true,
-
+  splitting: false,   // library package
+  sourcemap: false,
   treeshake: true,
-
   minify: true,
 
-  dts: false,
+  platform: "neutral",
+
+  external: [
+    /^node:/,
+  ],
 
   outExtension({ format }) {
     return {
-      js: format === "esm" ? ".mjs" : ".js"
+      js: format === "esm" ? ".mjs" : ".js",
     };
-  }
+  },
 });

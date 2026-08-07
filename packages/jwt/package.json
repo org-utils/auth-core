@@ -42,9 +42,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build:types": "tsc -b",
-    "build:js": "tsup",
-    "build": "npm run build:types && npm run build:js",
+    "build": "tsup",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

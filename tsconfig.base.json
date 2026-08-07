@@ -5,7 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "declaration": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "sourceMap": true,
     "strict": true,
     "exactOptionalPropertyTypes": false,
@@ -17,32 +17,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": false,
-    "baseUrl": ".",
-
-        "paths": {
-          "@auth-core/shared": [
-            "packages/shared/src"
-          ],
-
-          "@auth-core/hashing": [
-            "packages/hashing/src"
-          ],
-
-          "@auth-core/jwt": [
-            "packages/jwt/src"
-          ],
-
-          "@auth-core/memory": [
-            "packages/memory/src"
-          ],
-
-          "@auth-core/redis": [
-            "packages/redis/src"
-          ],
-
-          "@auth-core/core": [
-            "packages/core/src"
-          ]
-        }
+    "emitDeclarationOnly": true,
   }
 }

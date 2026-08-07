@@ -5,9 +5,10 @@
     "packages/*"
   ],
   "scripts": {
-    "clean": "rimraf packages/*/dist",
-    "build:types": "tsc -b tsconfig.build.json",
-    "build:js": "npm run build:js --workspaces",
+    "clean:dist": "rimraf packages/*/dist",
+    "clean": "rimraf packages/*/dist packages/*/src/**/*.d.ts packages/*/src/**/*.d.mts packages/*/src/**/*.d.cts packages/*/src/**/*.tsbuildinfo",
+    "build:types": "tsc -b --force",
+    "build:js": "npm run build --workspaces",
     "build": "npm run clean && npm run build:types && npm run build:js",
     "test": "vitest",
     "typecheck": "tsc -b",
