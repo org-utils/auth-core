@@ -6,20 +6,23 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
-    "test": "vitest run",
-    "typecheck": "tsc -b --force",
-    "lint": "echo \"Add eslint configuration\"",
 
-    "publish:shared": "npm publish -w packages/shared --access public",
-    "publish:hashing": "npm publish -w packages/hashing --access public",
-    "publish:jwt": "npm publish -w packages/jwt --access public",
-    "publish:memory": "npm publish -w packages/memory --access public",
-    "publish:redis": "npm publish -w packages/redis --access public",
-    "publish:core": "npm publish -w packages/auth-core --access public",
+    "test": "vitest",
 
-    "publish:packages": "npm run build && npm run publish:shared && npm run publish:hashing && npm run publish:jwt && npm run publish:memory && npm run publish:redis && npm run publish:core"
+    "typecheck": "tsc -b",
+
+    "lint": "eslint .",
+
+    "clean": "git clean -xdf",
+
+    "changeset": "changeset",
+
+    "version": "changeset version",
+
+    "release": "npm run build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.31.1",
     "@types/node": "^22.9.0",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
