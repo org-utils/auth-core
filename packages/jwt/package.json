@@ -1,0 +1,56 @@
+{
+  "name": "@auth-core/jwt",
+  "version": "0.0.1",
+  "description": "Generic JWT signing/verification (jose-based) supporting arbitrary token types and algorithms",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "author": "Anwar kamal <anwarkamal1434@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-utils/auth-core.git",
+    "directory": "packages/jwt"
+  },
+  "homepage": "https://github.com/org-utils/auth-core#readme",
+  "bugs": {
+    "url": "https://github.com/org-utils/auth-core/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "auth",
+    "jwt",
+    "jose",
+    "jws",
+    "token"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --treeshake --minify",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@auth-core/shared": "*",
+    "jose": "^5.9.6"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}

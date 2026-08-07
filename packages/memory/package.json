@@ -1,0 +1,53 @@
+{
+  "name": "@auth-core/memory",
+  "version": "0.0.1",
+  "description": "In-memory RevocationStore and SessionStore adapters (single-process / testing)",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/org-utils/auth-core.git",
+    "directory": "packages/memory"
+  },
+  "homepage": "https://github.com/org-utils/auth-core#readme",
+  "bugs": {
+    "url": "https://github.com/org-utils/auth-core/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "auth",
+    "session-store",
+    "revocation",
+    "in-memory"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --treeshake --minify",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@auth-core/shared": "*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}

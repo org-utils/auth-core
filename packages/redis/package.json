@@ -1,0 +1,55 @@
+{
+  "name": "@auth-core/redis",
+  "version": "0.0.1",
+  "description": "Redis-backed RevocationStore and SessionStore adapters (standalone/sentinel/cluster via ioredis)",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/org-utils/auth-core.git",
+    "directory": "packages/redis"
+  },
+  "homepage": "https://github.com/org-utils/auth-core#readme",
+  "bugs": {
+    "url": "https://github.com/org-utils/auth-core/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "auth",
+    "redis",
+    "ioredis",
+    "session-store",
+    "revocation"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --treeshake --minify",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@auth-core/shared": "*",
+    "ioredis": "^5.4.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}

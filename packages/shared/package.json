@@ -1,0 +1,52 @@
+{
+  "name": "@auth-core/shared",
+  "version": "0.0.1",
+  "description": "Framework-agnostic authentication core: password hashing, JWTs, refresh rotation, revocation, pluggable storage",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --treeshake --minify",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  },
+  "license": "MIT",
+  "author": "Anwar kamal <anwarkamal14>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-utils/auth-core.git",
+    "directory": "packages/shared"
+  },
+  "homepage": "https://github.com/org-utils/auth-core#readme",
+  "bugs": {
+    "url": "https://github.com/org-utils/auth-core/issues"
+  },
+  "keywords": [
+    "auth",
+    "authentication",
+    "types",
+    "errors"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

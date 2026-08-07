@@ -1,0 +1,67 @@
+{
+  "name": "@auth-core/hashing",
+  "version": "0.0.1",
+  "description": "Argon2id/bcrypt password hashing drivers and password strength policy",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --treeshake --minify",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@auth-core/shared": "*",
+    "argon2": "^0.41.1"
+  },
+  "peerDependencies": {
+    "bcrypt": "^5.1.1"
+  },
+  "peerDependenciesMeta": {
+    "bcrypt": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "bcrypt": "^5.1.1",
+    "@types/bcrypt": "^5.0.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  },
+  "license": "MIT",
+  "author": "Anwar kamal <anwarkamal1434@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-utils/auth-core.git",
+    "directory": "packages/hashing"
+  },
+  "homepage": "https://github.com/org-utils/auth-core#readme",
+  "bugs": {
+    "url": "https://github.com/org-utils/auth-core/issues"
+  },
+  "keywords": [
+    "auth",
+    "password",
+    "argon2",
+    "bcrypt",
+    "hashing"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
