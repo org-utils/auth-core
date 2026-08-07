@@ -6,6 +6,6 @@
     { "path": "./packages/jwt" },
     { "path": "./packages/memory" },
     { "path": "./packages/redis" },
-    { "path": "./packages/auth-core" }
+    { "path": "./packages/core" }
   ]
 }

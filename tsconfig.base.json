@@ -41,7 +41,7 @@
           ],
 
           "@auth-core/core": [
-            "packages/auth-core/src"
+            "packages/core/src"
           ]
         }
   }
