@@ -1,23 +1,29 @@
 {
   "name": "auth-core-monorepo",
-  "description": "Framework-agnostic authentication utilities for Node.js/Bun (TypeScript)",
+  "private": true,
   "workspaces": [
     "packages/*"
   ],
-
   "scripts": {
-    "build:workspaces": "npm run build -w packages/shared && npm run build -w packages/hashing && npm run build -w packages/jwt && npm run build -w packages/memory && npm run build -w packages/redis && npm run build -w packages/auth-core",
+    "build": "npm run build --workspaces --if-present",
     "test": "vitest run",
     "typecheck": "tsc -b --force",
-    "lint": "echo 'add eslint config as needed'",
-    "build": "npm run build --workspaces --if-present",
-    "publish:packages": "npm publish -w packages/shared --access public && npm publish -w packages/hashing --access public && npm publish -w packages/jwt --access public && npm publish -w packages/memory --access public && npm publish -w packages/redis --access public && npm publish -w packages/core --access public"
+    "lint": "echo \"Add eslint configuration\"",
+
+    "publish:shared": "npm publish -w packages/shared --access public",
+    "publish:hashing": "npm publish -w packages/hashing --access public",
+    "publish:jwt": "npm publish -w packages/jwt --access public",
+    "publish:memory": "npm publish -w packages/memory --access public",
+    "publish:redis": "npm publish -w packages/redis --access public",
+    "publish:core": "npm publish -w packages/auth-core --access public",
+
+    "publish:packages": "npm run build && npm run publish:shared && npm run publish:hashing && npm run publish:jwt && npm run publish:memory && npm run publish:redis && npm run publish:core"
   },
   "devDependencies": {
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.4",
+    "@types/node": "^22.9.0",
     "tsup": "^8.3.5",
-    "@types/node": "^22.9.0"
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
   },
   "engines": {
     "node": ">=20"
