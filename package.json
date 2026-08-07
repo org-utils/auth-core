@@ -1,14 +1,10 @@
 {
-  "name": "core-auth",
-  "version": "0.0.1",
+  "name": "auth-core",
   "description": "Framework-agnostic authentication utilities for Node.js/Bun (TypeScript)",
   "workspaces": [
     "packages/*"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
+
   "scripts": {
     "build:workspaces": "npm run build -w packages/shared && npm run build -w packages/hashing && npm run build -w packages/jwt && npm run build -w packages/memory && npm run build -w packages/redis && npm run build -w packages/auth-core",
     "test": "vitest run",
