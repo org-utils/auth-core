@@ -1,4 +1,5 @@
 {
+  "name": "auth-core-monorepo",
   "description": "Framework-agnostic authentication utilities for Node.js/Bun (TypeScript)",
   "workspaces": [
     "packages/*"
