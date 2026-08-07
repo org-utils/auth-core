@@ -41,7 +41,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean --treeshake --minify",
+    "build:types": "tsc -b",
+    "build:js": "tsup",
+    "build": "npm run build:types && npm run build:js",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

@@ -5,7 +5,13 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "clean": "rimraf packages/*/dist",
+
+    "build:types": "tsc -b tsconfig.build.json",
+
+    "build:js": "npm run build:js --workspaces",
+
+    "build": "npm run clean && npm run build:types && npm run build:js",
 
     "test": "vitest",
 
@@ -13,7 +19,7 @@
 
     "lint": "eslint .",
 
-    "clean": "git clean -xdf",
+    "clean:git": "git clean -xdf",
 
     "changeset": "changeset",
 

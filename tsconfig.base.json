@@ -16,6 +16,33 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "baseUrl": ".",
+
+        "paths": {
+          "@auth-core/shared": [
+            "packages/shared/src"
+          ],
+
+          "@auth-core/hashing": [
+            "packages/hashing/src"
+          ],
+
+          "@auth-core/jwt": [
+            "packages/jwt/src"
+          ],
+
+          "@auth-core/memory": [
+            "packages/memory/src"
+          ],
+
+          "@auth-core/redis": [
+            "packages/redis/src"
+          ],
+
+          "@auth-core/core": [
+            "packages/auth-core/src"
+          ]
+        }
   }
 }
