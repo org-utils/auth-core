@@ -22,9 +22,9 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@auth-core/shared": "*",
-    "@auth-core/jwt": "*",
-    "@auth-core/hashing": "*",
+    "@auth-core/shared": "^0.0.1",
+    "@auth-core/jwt": "^0.0.1",
+    "@auth-core/hashing": "^0.0.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {
