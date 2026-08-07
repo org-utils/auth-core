@@ -1,5 +1,5 @@
 {
-  "name": "auth-core-utils",
+  "name": "core-auth",
   "version": "0.0.1",
   "description": "Framework-agnostic authentication utilities for Node.js/Bun (TypeScript)",
   "workspaces": [
