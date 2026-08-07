@@ -1,5 +1,4 @@
 {
-  "name": "auth-core",
   "description": "Framework-agnostic authentication utilities for Node.js/Bun (TypeScript)",
   "workspaces": [
     "packages/*"
@@ -10,7 +9,7 @@
     "test": "vitest run",
     "typecheck": "tsc -b --force",
     "lint": "echo 'add eslint config as needed'",
-    "build": "npm run build --workspaces",
+    "build": "npm run build --workspaces --if-present",
     "publish:packages": "npm publish -w packages/shared --access public && npm publish -w packages/hashing --access public && npm publish -w packages/jwt --access public && npm publish -w packages/memory --access public && npm publish -w packages/redis --access public && npm publish -w packages/core --access public"
   },
   "devDependencies": {
