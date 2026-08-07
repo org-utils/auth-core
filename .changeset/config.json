@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "https://github.com/org-utils/auth-core"
+      "repo": "org-utils/auth-core"
     }
   ],
   "commit": false,
