@@ -6,25 +6,15 @@
   ],
   "scripts": {
     "clean": "rimraf packages/*/dist",
-
     "build:types": "tsc -b tsconfig.build.json",
-
     "build:js": "npm run build:js --workspaces",
-
     "build": "npm run clean && npm run build:types && npm run build:js",
-
     "test": "vitest",
-
     "typecheck": "tsc -b",
-
     "lint": "eslint .",
-
     "clean:git": "git clean -xdf",
-
     "changeset": "changeset",
-
     "version": "changeset version",
-
     "release": "npm run build && changeset publish"
   },
   "devDependencies": {
@@ -36,5 +26,6 @@
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "version": ""
 }
