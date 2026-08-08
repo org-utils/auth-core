@@ -2,7 +2,7 @@ import { randomUUID } from "node:crypto";
 import { JwtService } from "@auth-core/jwt";
 import { PasswordService } from "@auth-core/hashing";
 import type { SignOptions, TokenPayload, VerifyOptions } from "@auth-core/shared";
-import { RevokedTokenError } from "@auth-core/shared";
+import { RevokedTokenError, uniqueId } from "@auth-core/shared";
 import type { AuthConfig } from "./config.js";
 import { resolveAuthConfig } from "./config.js";
 import { rotateRefreshToken as rotaterefreshToken, type RotateResult } from "./refresh-rotation.js";
@@ -93,23 +93,26 @@ export class Auth {
 
   /** Issues an access/refresh token pair and creates the backing session record. Call this on login. */
   async login(input: LoginSessionInput): Promise<LoginResult> {
-    const jti = randomUUID();
+    const accessJti = uniqueId();
+    const refreshJti = uniqueId();
     const nowSeconds = Math.floor(Date.now() / 1000);
     const expiresAt = nowSeconds + this.config.tokens.refresh.ttlSeconds;
-
+    const {userId, deviceId} = input;
     const [accessToken, refreshToken] = await Promise.all([
-      this.jwt.signAccessToken({ sub: input.userId }),
-      this.jwt.signRefreshToken({ sub: input.userId }, { jti }),
+      this.jwt.signAccessToken({ sub: userId }, { jti: accessJti }),
+      this.jwt.signRefreshToken({ sub: userId }, { jti: refreshJti }),
     ]);
 
     const session = await this.config.stores.session.create({
-      jti,
-      userId: input.userId,
-      deviceId: input.deviceId,
+      jti: refreshJti,
+      userId: userId,
+      deviceId: deviceId,
       expiresAt,
     });
     await this.config.hooks.onSessionCreated?.(session);
-    await this.config.hooks.onTokenIssued?.({ type: "refresh", jti, sub: input.userId });
+    // await this.config.hooks.onTokenIssued?.({ type: "refresh", jti: refreshJti, sub: userId, deviceId });
+    await this.config.hooks.onTokensIssued?.([{ type: "access", jti: accessJti, sub: userId, deviceId },
+    { type: "refresh", jti: refreshJti, sub: userId, deviceId }]);
 
     return { accessToken, refreshToken };
   }

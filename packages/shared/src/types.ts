@@ -159,10 +159,11 @@ export interface SessionStore {
 /* ---------------------------------------------------------------------- */
 
 export interface AuthHooks {
-  onTokenIssued?(info: { type: TokenType; jti: string; sub?: string }): void | Promise<void>;
+  onTokenIssued?(info: { type: TokenType; jti: string; sub?: string; deviceId?: string }): void | Promise<void>
+  onTokensIssued?(info: { type: TokenType; jti: string; sub?: string; deviceId?: string }[]): void | Promise<void>;
   onTokenVerified?(info: { type: TokenType; jti: string; sub?: string }): void | Promise<void>;
   onTokenRevoked?(info: { jti: string; reason?: string }): void | Promise<void>;
-  onRefresh?(info: { oldJti: string; newJti: string; userId: string }): void | Promise<void>;
+  onRefresh?(info: { oldJti: string; newJti: string; userId: string, deviceId?: string }): void | Promise<void>;
   onReuseDetected?(info: { jti: string; userId: string }): void | Promise<void>;
   onSessionCreated?(info: SessionRecord): void | Promise<void>;
   onSessionDeleted?(info: { jti: string; userId: string }): void | Promise<void>;

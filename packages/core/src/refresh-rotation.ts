@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { JwtService } from "@auth-core/jwt";
 import type { RevocationStore, SessionStore, TokenPayload, AuthHooks } from "@auth-core/shared";
-import { RefreshReuseDetectedError, RevokedTokenError, SessionExpiredError } from "@auth-core/shared";
+import { RefreshReuseDetectedError, RevokedTokenError, SessionExpiredError, uniqueId } from "@auth-core/shared";
 
 export interface RefreshRotationDeps {
   jwt: JwtService;
@@ -60,23 +60,24 @@ export async function rotateRefreshToken(
     );
   }
 
-  const newJti = randomUUID();
+  const accessJti = uniqueId();
+  const refreshJti = uniqueId();
   const nowSeconds = Math.floor(Date.now() / 1000);
   const newExpiresAt = nowSeconds + deps.refreshTtlSeconds;
 
   const [accessToken, refreshTokenNext] = await Promise.all([
-    deps.jwt.signAccessToken({ sub: userId }),
-    deps.jwt.signRefreshToken({ sub: userId }, { jti: newJti }),
+    deps.jwt.signAccessToken({ sub: userId, jti: accessJti }),
+    deps.jwt.signRefreshToken({ sub: userId }, { jti: refreshJti }),
   ]);
 
   await deps.sessionStore.rotate(jti, {
-    jti: newJti,
+    jti: refreshJti,
     userId,
     deviceId: session.deviceId,
     expiresAt: newExpiresAt,
   });
 
-  await deps.hooks.onRefresh?.({ oldJti: jti, newJti, userId });
+  await deps.hooks.onRefresh?.({ oldJti: jti, newJti: refreshJti, userId, deviceId: session.deviceId });
 
   return { accessToken, refreshToken: refreshTokenNext, payload };
 }
