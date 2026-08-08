@@ -1,7 +1,6 @@
 import { SignJWT } from "jose";
-import { randomUUID } from "node:crypto";
 import type { SignOptions, TokenPayload } from "@auth-core/shared";
-import { ConfigurationError } from "@auth-core/shared";
+import { ConfigurationError, uniqueId } from "@auth-core/shared";
 import type { KeyRing } from "./keys.js";
 import { resolveKeyMaterial } from "./keys.js";
 
@@ -31,7 +30,7 @@ export async function signToken(
     throw new ConfigurationError(`No signing key found for kid "${options.kid}"`);
   }
 
-  const jti = options.jti ?? payload.jti ?? randomUUID();
+  const jti = options.jti ?? payload.jti ?? uniqueId();
   const expirySeconds = parseExpiry(options.expiresIn, defaultExpirySeconds);
   const nowSeconds = Math.floor(Date.now() / 1000);
 

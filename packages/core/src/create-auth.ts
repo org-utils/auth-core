@@ -1,4 +1,3 @@
-import { randomUUID } from "node:crypto";
 import { JwtService } from "@auth-core/jwt";
 import { PasswordService } from "@auth-core/hashing";
 import type { SignOptions, TokenPayload, VerifyOptions } from "@auth-core/shared";

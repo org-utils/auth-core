@@ -1,4 +1,3 @@
-import { randomUUID } from "node:crypto";
 import type { JwtService } from "@auth-core/jwt";
 import type { RevocationStore, SessionStore, TokenPayload, AuthHooks } from "@auth-core/shared";
 import { RefreshReuseDetectedError, RevokedTokenError, SessionExpiredError, uniqueId } from "@auth-core/shared";
