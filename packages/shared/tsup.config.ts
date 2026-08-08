@@ -15,9 +15,9 @@ export default defineConfig({
   splitting: false,   // library package
   sourcemap: false,
   treeshake: true,
-  minify: true,
+  minify: false,
+  platform: "node",
 
-  platform: "neutral",
 
   external: [
     /^node:/,

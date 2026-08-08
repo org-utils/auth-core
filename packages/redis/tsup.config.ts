@@ -15,12 +15,14 @@ export default defineConfig({
   splitting: false,   // library package
   sourcemap: true,
   treeshake: true,
-  minify: true,
+  minify: false,
 
-  platform: "neutral",
+  platform: "node",
 
   external: [
     /^node:/,
+    // Internal packages should remain external.
+       /^@auth-core\//,
   ],
 
   outExtension({ format }) {

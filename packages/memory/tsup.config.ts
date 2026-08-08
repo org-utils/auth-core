@@ -17,10 +17,13 @@ export default defineConfig({
   treeshake: true,
   minify: true,
 
-  platform: "neutral",
+  platform: "node",
+
 
   external: [
     /^node:/,
+    // Internal packages should remain external.
+    /^@auth-core\//,
   ],
 
   outExtension({ format }) {

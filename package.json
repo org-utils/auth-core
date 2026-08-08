@@ -30,5 +30,10 @@
   "engines": {
     "node": ">=20"
   },
-  "version": ""
+  "version": "",
+  "allowScripts": {
+    "argon2": true,
+    "bcrypt": true,
+    "esbuild": true
+  }
 }

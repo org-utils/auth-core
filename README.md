@@ -116,11 +116,3 @@ npm run typecheck  # tsc --noEmit across the whole workspace
 ## License
 
 MIT
-
-find packages -name "*.d.ts" -delete
-find packages -name "*.d.mts" -delete
-find packages -name "*.js" -delete
-find packages -name "*.js.map" -delete
-find packages -name "*.tsbuildinfo" -delete
-rm -rf packages/*/dist
-find packages -name "*.d.ts.map" -delete

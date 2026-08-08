@@ -2,14 +2,14 @@
   "name": "@auth-core/redis",
   "version": "0.0.2",
   "description": "Redis-backed RevocationStore and SessionStore adapters (standalone/sentinel/cluster via ioredis)",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.mjs"
     }
   },
   "files": [
