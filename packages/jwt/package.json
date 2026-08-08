@@ -1,6 +1,6 @@
 {
   "name": "@auth-core/jwt",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Generic JWT signing/verification (jose-based) supporting arbitrary token types and algorithms",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

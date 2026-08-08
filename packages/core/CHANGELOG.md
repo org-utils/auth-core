@@ -1,5 +1,14 @@
 # @auth-core/core
 
+## 0.0.8
+
+### Patch Changes
+
+- [`1edf3a9`](https://github.com/org-utils/auth-core/commit/1edf3a90ff999b336115c1202266138b08de8b78) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - updated to remove hardcoded uuids
+
+- Updated dependencies [[`1edf3a9`](https://github.com/org-utils/auth-core/commit/1edf3a90ff999b336115c1202266138b08de8b78)]:
+  - @auth-core/jwt@0.0.7
+
 ## 0.0.7
 
 ### Patch Changes
