@@ -1,5 +1,11 @@
 # @auth-core/shared
 
+## 0.0.6
+
+### Patch Changes
+
+- [`9b8d933`](https://github.com/org-utils/auth-core/commit/9b8d9339f07f91cf8537752610ca7be544e84533) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - updated token assigning to asssign jti to acess and refresh both
+
 ## 0.0.5
 
 ### Patch Changes

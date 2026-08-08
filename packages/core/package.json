@@ -1,6 +1,6 @@
 {
   "name": "@auth-core/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Framework-agnostic authentication core: password hashing, JWTs, refresh rotation, revocation, pluggable storage",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -22,9 +22,9 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@auth-core/shared": "^0.0.5",
-    "@auth-core/jwt": "^0.0.5",
-    "@auth-core/hashing": "^0.0.5",
+    "@auth-core/shared": "^0.0.6",
+    "@auth-core/jwt": "^0.0.6",
+    "@auth-core/hashing": "^0.0.6",
     "zod": "^4.4.3"
   },
   "devDependencies": {

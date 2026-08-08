@@ -1,5 +1,12 @@
 # @auth-core/jwt
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [[`9b8d933`](https://github.com/org-utils/auth-core/commit/9b8d9339f07f91cf8537752610ca7be544e84533)]:
+  - @auth-core/shared@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
