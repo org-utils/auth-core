@@ -5,6 +5,7 @@
     "rootDir": "./src",
     "composite": true,
     "emitDeclarationOnly": true,
+    "types": ["node"]
   },
   "include": ["src"],
   "references": [
