@@ -1,6 +1,6 @@
 {
   "name": "@auth-core/redis",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Redis-backed RevocationStore and SessionStore adapters (standalone/sentinel/cluster via ioredis)",
   "main": "./dist/index.mjs",
   "module": "./dist/index.js",
@@ -45,7 +45,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@auth-core/shared": "^0.0.2",
+    "@auth-core/shared": "^0.0.3",
     "ioredis": "^5.4.1"
   },
   "devDependencies": {
