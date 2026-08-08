@@ -1,6 +1,6 @@
 {
   "name": "@auth-core/shared",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Framework-agnostic authentication core: password hashing, JWTs, refresh rotation, revocation, pluggable storage",
   "main": "./dist/index.mjs",
   "module": "./dist/index.js",

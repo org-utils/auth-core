@@ -1,5 +1,14 @@
 # @auth-core/hashing
 
+## 0.0.3
+
+### Patch Changes
+
+- [`5a59ed2`](https://github.com/org-utils/auth-core/commit/5a59ed23b7e9426bcd5ad3ca1efa22d78f524ca9) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - updated settings
+
+- Updated dependencies [[`5a59ed2`](https://github.com/org-utils/auth-core/commit/5a59ed23b7e9426bcd5ad3ca1efa22d78f524ca9)]:
+  - @auth-core/shared@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

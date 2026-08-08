@@ -1,6 +1,6 @@
 {
   "name": "@auth-core/hashing",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Argon2id/bcrypt password hashing drivers and password strength policy",
   "main": "./dist/index.mjs",
   "module": "./dist/index.js",
@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@auth-core/shared": "^0.0.2",
+    "@auth-core/shared": "^0.0.3",
     "argon2": "^0.41.1"
   },
   "peerDependencies": {
