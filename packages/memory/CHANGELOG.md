@@ -1,5 +1,14 @@
 # @auth-core/memory
 
+## 0.0.4
+
+### Patch Changes
+
+- [`5b99e27`](https://github.com/org-utils/auth-core/commit/5b99e279348d188352a0090969cb4d8a83b4f8c2) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - updated package json files and fixes dependency issues
+
+- Updated dependencies [[`5b99e27`](https://github.com/org-utils/auth-core/commit/5b99e279348d188352a0090969cb4d8a83b4f8c2)]:
+  - @auth-core/shared@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

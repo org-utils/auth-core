@@ -1,6 +1,6 @@
 {
   "name": "@auth-core/memory",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "In-memory RevocationStore and SessionStore adapters (single-process / testing)",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -44,7 +44,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@auth-core/shared": "^0.0.3"
+    "@auth-core/shared": "^0.0.4"
   },
   "devDependencies": {
     "tsup": "^8.3.5",
