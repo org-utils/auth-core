@@ -15,6 +15,8 @@ export interface LoginSessionInput {
 export interface LoginResult {
   accessToken: string;
   refreshToken: string;
+  accessJti?: string;
+  refreshJti?: string;
 }
 
 export class Auth {
@@ -114,7 +116,7 @@ export class Auth {
     await this.config.hooks.onTokensIssued?.([{ type: "access", jti: accessJti, sub: userId, deviceId },
     { type: "refresh", jti: refreshJti, sub: userId, deviceId }]);
 
-    return { accessToken, refreshToken };
+    return { accessToken, refreshToken, accessJti, refreshJti };
   }
 
   async rotateRefreshToken(refreshToken: string): Promise<RotateResult> {
