@@ -1,5 +1,16 @@
 # @auth-core/redis
 
+## 0.0.5
+
+### Patch Changes
+
+- [`a40759c`](https://github.com/org-utils/auth-core/commit/a40759c7baa4d0614f0e1a6c1fd634f501f3821f) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - updated redis package
+
+- [`9e5b5b5`](https://github.com/org-utils/auth-core/commit/9e5b5b5ae70dfa4dc7e29eee5d07f63f31d3a594) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - patch
+
+- Updated dependencies [[`a40759c`](https://github.com/org-utils/auth-core/commit/a40759c7baa4d0614f0e1a6c1fd634f501f3821f), [`9e5b5b5`](https://github.com/org-utils/auth-core/commit/9e5b5b5ae70dfa4dc7e29eee5d07f63f31d3a594)]:
+  - @auth-core/shared@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
