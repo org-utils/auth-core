@@ -1,5 +1,11 @@
 # @auth-core/core
 
+## 0.0.7
+
+### Patch Changes
+
+- [`fa46185`](https://github.com/org-utils/auth-core/commit/fa46185eb2b957dd3aad0ab6af8779b9ab17034f) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - changed core pacakge login return type
+
 ## 0.0.6
 
 ### Patch Changes
