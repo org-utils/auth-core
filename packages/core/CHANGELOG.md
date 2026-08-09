@@ -1,5 +1,11 @@
 # @auth-core/core
 
+## 0.0.9
+
+### Patch Changes
+
+- [`69278cc`](https://github.com/org-utils/auth-core/commit/69278ccd65fe930c29940580faf4673d2218b632) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - added sessions in the auth
+
 ## 0.0.8
 
 ### Patch Changes
