@@ -1,6 +1,6 @@
 import { JwtService } from "@auth-core/jwt";
 import { PasswordService } from "@auth-core/hashing";
-import type { SignOptions, TokenPayload, VerifyOptions } from "@auth-core/shared";
+import type { SessionRecord, SignOptions, TokenPayload, VerifyOptions } from "@auth-core/shared";
 import { RevokedTokenError, uniqueId } from "@auth-core/shared";
 import type { AuthConfig } from "./config.js";
 import { resolveAuthConfig } from "./config.js";
@@ -147,8 +147,8 @@ export class Auth {
 
   /** Logs out a single session (device). */
   async logout(sessionJti: string): Promise<void> {
-    const session = await this.config.stores.session.find(sessionJti);
-    await this.config.stores.session.delete(sessionJti);
+    const session = await this.getSession(sessionJti);
+    await this.deleteSession(sessionJti);
     if (session) {
       await this.config.stores.revocation.revoke({
         jti: sessionJti,
@@ -170,6 +170,31 @@ export class Auth {
     if (await this.config.stores.revocation.isRevoked(payload.jti)) {
       throw new RevokedTokenError(`Token "${payload.jti}" has been revoked`);
     }
+  }
+  /**
+   *
+   * @param sessionJti
+   * @returns @type {SessionRecord | null}
+   */
+  async getSession(sessionJti: string): Promise<SessionRecord | null> {
+    const session = await this.config.stores.session.find(sessionJti);
+    return session;
+  }
+  /**
+   *
+   * @param sessionJti
+   */
+  async deleteSession(sessionJti: string): Promise<void> {
+    await this.config.stores.session.delete(sessionJti);
+  }
+
+  /**
+   * Update a session's data.
+   * @param sessionJti
+   * @param data
+   */
+  async updateSession(sessionJti: string, data: Partial<SessionRecord>): Promise<SessionRecord | null> {
+    return await this.config.stores.session.update(sessionJti, data);
   }
 }
 
