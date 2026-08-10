@@ -145,13 +145,13 @@ export interface UpdateSessionInput {
  */
 export interface SessionStore {
   create(input: CreateSessionInput): Promise<SessionRecord>;
-  update(jti: string, patch: UpdateSessionInput): Promise<SessionRecord | null>;
+  update(jti: string, patch: UpdateSessionInput, userId?: string): Promise<SessionRecord | null>;
   /** Atomically marks `jti` as rotated and creates the successor session. */
-  rotate(jti: string, next: CreateSessionInput): Promise<SessionRecord>;
-  delete(jti: string): Promise<void>;
+  rotate(jti: string, next: CreateSessionInput, userId?: string): Promise<SessionRecord>;
+  delete(jti: string, userId?: string): Promise<void>;
   /** Deletes every session belonging to a user (used by logoutAll). */
   deleteByUser(userId: string): Promise<void>;
-  find(jti: string): Promise<SessionRecord | null>;
+  find(jti: string, userId?: string): Promise<SessionRecord | null>;
 }
 
 /* ---------------------------------------------------------------------- */

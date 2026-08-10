@@ -146,9 +146,9 @@ export class Auth {
   }
 
   /** Logs out a single session (device). */
-  async logout(sessionJti: string): Promise<void> {
-    const session = await this.getSession(sessionJti);
-    await this.deleteSession(sessionJti);
+  async logout(sessionJti: string, userId?: string): Promise<void> {
+    const session = await this.getSession(sessionJti, userId);
+    await this.deleteSession(sessionJti, userId);
     if (session) {
       await this.config.stores.revocation.revoke({
         jti: sessionJti,
@@ -171,30 +171,32 @@ export class Auth {
       throw new RevokedTokenError(`Token "${payload.jti}" has been revoked`);
     }
   }
+
   /**
-   *
+   * Retrieves a session by its JTI.
    * @param sessionJti
    * @returns @type {SessionRecord | null}
    */
-  async getSession(sessionJti: string): Promise<SessionRecord | null> {
-    const session = await this.config.stores.session.find(sessionJti);
+  async getSession(sessionJti: string, userId?: string): Promise<SessionRecord | null> {
+    const session = await this.config.stores.session.find(sessionJti, userId);
     return session;
-  }
-  /**
-   *
-   * @param sessionJti
-   */
-  async deleteSession(sessionJti: string): Promise<void> {
-    await this.config.stores.session.delete(sessionJti);
   }
 
   /**
-   * Update a session's data.
+   * Deletes a session by its JTI.
+   * @param sessionJti
+   */
+  async deleteSession(sessionJti: string, userId?: string): Promise<void> {
+    await this.config.stores.session.delete(sessionJti, userId);
+  }
+
+  /**
+   * Updates a session's data.
    * @param sessionJti
    * @param data
    */
-  async updateSession(sessionJti: string, data: Partial<SessionRecord>): Promise<SessionRecord | null> {
-    return await this.config.stores.session.update(sessionJti, data);
+  async updateSession(sessionJti: string, data: Partial<SessionRecord>, userId?: string): Promise<SessionRecord | null> {
+    return await this.config.stores.session.update(sessionJti, data, userId);
   }
 }
 
