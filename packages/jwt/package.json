@@ -1,6 +1,6 @@
 {
   "name": "@auth-core/jwt",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Generic JWT signing/verification (jose-based) supporting arbitrary token types and algorithms",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -46,7 +46,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@auth-core/shared": "^0.0.6",
+    "@auth-core/shared": "^0.0.7",
     "jose": "^5.9.6"
   },
   "devDependencies": {

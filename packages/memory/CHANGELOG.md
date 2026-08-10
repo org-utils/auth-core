@@ -1,5 +1,14 @@
 # @auth-core/memory
 
+## 0.0.7
+
+### Patch Changes
+
+- [`a0b2f72`](https://github.com/org-utils/auth-core/commit/a0b2f72a2d499523cbd30e37bba501d72bad3663) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - updated deps
+
+- Updated dependencies [[`a0b2f72`](https://github.com/org-utils/auth-core/commit/a0b2f72a2d499523cbd30e37bba501d72bad3663)]:
+  - @auth-core/shared@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes
