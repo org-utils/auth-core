@@ -115,7 +115,10 @@ export interface ResolvedAuthConfig extends Required<Pick<AuthConfig, "hashing" 
 }
 
 const DEFAULT_ACCESS_TTL_SECONDS = 15 * 60;
+// 900 seconds = 15 minutes
+
 const DEFAULT_REFRESH_TTL_SECONDS = 30 * 24 * 60 * 60;
+// 2,592,000 seconds = 30 days
 
 /**
  * Validates the primitive portion of an {@link AuthConfig} with zod, checks
