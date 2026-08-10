@@ -1,5 +1,11 @@
 # @auth-core/core
 
+## 0.0.11
+
+### Patch Changes
+
+- [`cd41a11`](https://github.com/org-utils/auth-core/commit/cd41a11f65a5d0240361eda1df36acd186a1dc6d) Thanks [@Anwarkamal143](https://github.com/Anwarkamal143)! - Updated the config file
+
 ## 0.0.10
 
 ### Patch Changes
